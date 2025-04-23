@@ -47,6 +47,17 @@ class _OrderPageState extends State <OrderPage> {
                 return null;
               },
             ),
+            TextFormField(
+              controller: jumlahMinumanController,
+              decoration: const InputDecoration(labelText: 'Drink QTY Order'),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'Please enter the QTY of drink order';
+                }
+                return null;
+              },
+            ),
+            
           ],
         ),
     ));
