@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tugas4_navigation/home_page.dart';
 import 'package:tugas4_navigation/register_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -53,6 +54,12 @@ class _LoginPageState extends State <LoginPage> {
                       return null;
                       },
               ),
+              ElevatedButton(onPressed: (){
+                if (_formKey.currentState!.validate()) {
+                  Navigator.pushReplacement(context, 
+                  MaterialPageRoute(builder: (context)=> const HomePage()));
+                }
+              }, child: Text('Login')),
               TextButton(
                 onPressed: (){
                   Navigator.push
