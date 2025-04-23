@@ -24,6 +24,7 @@ class _LoginPageState extends State <LoginPage> {
     final _formKey = GlobalKey <FormState>();
     return Scaffold(
       body: Form(
+        key: _formKey,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -54,12 +55,16 @@ class _LoginPageState extends State <LoginPage> {
                       return null;
                       },
               ),
-              ElevatedButton(onPressed: (){
-                if (_formKey.currentState!.validate()) {
-                  Navigator.pushReplacement(context, 
-                  MaterialPageRoute(builder: (context)=> const HomePage()));
+              ElevatedButton(
+                onPressed: (){
+                  if (_formKey.currentState!.validate()){
+                    Navigator.pushReplacement(context, 
+                    MaterialPageRoute(builder: (context) => const HomePage()));
+                  }
+
                 }
-              }, child: Text('Login')),
+              , child: Text('Login')
+              ),
               TextButton(
                 onPressed: (){
                   Navigator.push
