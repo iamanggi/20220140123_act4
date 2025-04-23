@@ -38,6 +38,18 @@ class _LoginPageState extends State <LoginPage> {
                     }
                     return null;
                 },
+              ),
+              TextFormField(
+                controller: passwordController,
+                decoration: const InputDecoration(
+                  labelText: 'Password', hintText: 'Enter your password', obscureText: true
+                  ,),
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your password';
+                      }
+                      return null;
+                      },
               )
             ],
           ),)
